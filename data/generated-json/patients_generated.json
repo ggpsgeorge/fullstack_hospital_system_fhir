@@ -1,0 +1,232 @@
+[
+  {
+    "resourceType": "Patient",
+    "id": "patient-1",
+    "name": [
+      {
+        "use": "official",
+        "family": "Smith",
+        "given": ["John"]
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1985-02-15",
+    "address": [
+      {
+        "use": "home",
+        "line": ["456 Oak Street"],
+        "city": "Los Angeles",
+        "state": "CA",
+        "postalCode": "90001",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "resourceType": "Patient",
+    "id": "patient-2",
+    "name": [
+      {
+        "use": "official",
+        "family": "Johnson",
+        "given": ["Mary", "Ann"]
+      }
+    ],
+    "gender": "female",
+    "birthDate": "1990-07-20",
+    "address": [
+      {
+        "use": "home",
+        "line": ["123 Maple Avenue"],
+        "city": "New York",
+        "state": "NY",
+        "postalCode": "10001",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "resourceType": "Patient",
+    "id": "patient-3",
+    "name": [
+      {
+        "use": "official",
+        "family": "Williams",
+        "given": ["Michael"]
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1978-11-05",
+    "address": [
+      {
+        "use": "home",
+        "line": ["789 Birch Road"],
+        "city": "Chicago",
+        "state": "IL",
+        "postalCode": "60601",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "resourceType": "Patient",
+    "id": "patient-4",
+    "name": [
+      {
+        "use": "official",
+        "family": "Brown",
+        "given": ["Susan"]
+      }
+    ],
+    "gender": "female",
+    "birthDate": "2000-03-12",
+    "address": [
+      {
+        "use": "home",
+        "line": ["321 Pine Street"],
+        "city": "San Francisco",
+        "state": "CA",
+        "postalCode": "94101",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "resourceType": "Patient",
+    "id": "patient-5",
+    "name": [
+      {
+        "use": "official",
+        "family": "Davis",
+        "given": ["James"]
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1965-06-30",
+    "address": [
+      {
+        "use": "home",
+        "line": ["654 Cedar Lane"],
+        "city": "Houston",
+        "state": "TX",
+        "postalCode": "77001",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "resourceType": "Patient",
+    "id": "patient-6",
+    "name": [
+      {
+        "use": "official",
+        "family": "Martinez",
+        "given": ["Angela"]
+      }
+    ],
+    "gender": "female",
+    "birthDate": "1988-09-09",
+    "address": [
+      {
+        "use": "home",
+        "line": ["567 Elm Boulevard"],
+        "city": "Phoenix",
+        "state": "AZ",
+        "postalCode": "85001",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "resourceType": "Patient",
+    "id": "patient-7",
+    "name": [
+      {
+        "use": "official",
+        "family": "Garcia",
+        "given": ["Carlos"]
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1995-12-25",
+    "address": [
+      {
+        "use": "home",
+        "line": ["101 Spruce Way"],
+        "city": "San Diego",
+        "state": "CA",
+        "postalCode": "92101",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "resourceType": "Patient",
+    "id": "patient-8",
+    "name": [
+      {
+        "use": "official",
+        "family": "Rodriguez",
+        "given": ["Isabella"]
+      }
+    ],
+    "gender": "female",
+    "birthDate": "2002-04-18",
+    "address": [
+      {
+        "use": "home",
+        "line": ["333 Cypress Circle"],
+        "city": "Miami",
+        "state": "FL",
+        "postalCode": "33101",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "resourceType": "Patient",
+    "id": "patient-9",
+    "name": [
+      {
+        "use": "official",
+        "family": "Lopez",
+        "given": ["David"]
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1970-08-14",
+    "address": [
+      {
+        "use": "home",
+        "line": ["987 Willow Drive"],
+        "city": "Boston",
+        "state": "MA",
+        "postalCode": "02101",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "resourceType": "Patient",
+    "id": "patient-10",
+    "name": [
+      {
+        "use": "official",
+        "family": "Gonzalez",
+        "given": ["Sofia"]
+      }
+    ],
+    "gender": "female",
+    "birthDate": "1998-05-27",
+    "address": [
+      {
+        "use": "home",
+        "line": ["222 Redwood Avenue"],
+        "city": "Seattle",
+        "state": "WA",
+        "postalCode": "98101",
+        "country": "USA"
+      }
+    ]
+  }
+]

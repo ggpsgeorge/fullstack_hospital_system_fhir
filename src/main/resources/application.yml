@@ -1,0 +1,30 @@
+## Changing Spring Default port
+server:
+    port: 8181
+
+## Postgres Database
+spring:
+    jpa:
+        database: POSTGRESQL
+        show-sql: true
+        hibernate: 
+            ddl-auto: update
+        properties: 
+            hibernate: 
+                "[format_sql]": true
+                connection: org.postgresql.Driver
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                
+    sql: 
+        init: 
+            platform: postgres
+
+    datasource: 
+        url: jdbc:postgresql://localhost:5432/hospitaldb
+        username: postgres_user
+        password: password
+        
+    # flyway:
+    #     baseline-on-migrate: true
+    #     validate-on-migrate: true
+    #     enabled: true  

@@ -1,0 +1,66 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+fhir-frontend/node_modules
+fhir-frontend/.pnp
+fhir-frontend/.pnp.*
+fhir-frontend/.yarn/*
+fhir-frontend/!.yarn/patches
+fhir-frontend/!.yarn/plugins
+fhir-frontend/!.yarn/releases
+fhir-frontend/!.yarn/versions
+# testing
+fhir-frontend/coverage
+# next.js
+fhir-frontend/.next/
+fhir-frontend/out/
+# production
+fhir-frontend/build
+# misc
+fhir-frontend/.DS_Store
+fhir-frontend/*.pem
+# debug
+fhir-frontend/npm-debug.log*
+fhir-frontend/yarn-debug.log*
+fhir-frontend/yarn-error.log*
+# env files (can opt-in for committing if needed)
+fhir-frontend/.env*
+# vercel
+fhir-frontend/.vercel
+# typescript
+fhir-frontend/*.tsbuildinfo
+fhir-frontend/next-env.d.ts

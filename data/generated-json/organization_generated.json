@@ -1,0 +1,113 @@
+[
+  {
+    "resourceType": "Organization",
+    "id": "hospital-1",
+    "name": "City General Hospital",
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+1-800-555-001",
+        "use": "work"
+      },
+      {
+        "system": "email",
+        "value": "contact@citygeneralhospital.org",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "line": ["123 Main Street"],
+        "city": "Metropolis",
+        "state": "NY",
+        "postalCode": "10001",
+        "country": "US"
+      }
+    ]
+  },
+  {
+    "resourceType": "Organization",
+    "id": "hospital-2",
+    "name": "Green Valley Medical Center",
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+1-800-555-002",
+        "use": "work"
+      },
+      {
+        "system": "email",
+        "value": "info@greenvalleymedcenter.com",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "line": ["456 Health Drive"],
+        "city": "Springfield",
+        "state": "IL",
+        "postalCode": "62701",
+        "country": "US"
+      }
+    ]
+  },
+  {
+    "resourceType": "Organization",
+    "id": "hospital-3",
+    "name": "Lakeside Regional Hospital",
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+1-800-555-003",
+        "use": "work"
+      },
+      {
+        "system": "email",
+        "value": "admin@lakesideregional.org",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "line": ["789 Wellness Ave"],
+        "city": "Lakeside",
+        "state": "CA",
+        "postalCode": "92040",
+        "country": "US"
+      }
+    ]
+  }
+]  
