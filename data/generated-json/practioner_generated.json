@@ -1,0 +1,173 @@
+[
+    {
+      "resourceType": "Practitioner",
+      "id": "doctor-1",
+      "name": [
+        {
+          "family": "Smith",
+          "given": ["John"],
+          "prefix": ["Dr."]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1975-06-20",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+1-800-555-1001",
+          "use": "work"
+        },
+        {
+          "system": "email",
+          "value": "john.smith@hospital.org",
+          "use": "work"
+        }
+      ],
+      "address": [
+        {
+          "line": ["123 Medical Plaza"],
+          "city": "Metropolis",
+          "state": "NY",
+          "postalCode": "10001",
+          "country": "US"
+        }
+      ]
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "doctor-2",
+      "name": [
+        {
+          "family": "Jones",
+          "given": ["Emily"],
+          "prefix": ["Dr."]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1983-09-15",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+1-800-555-1002",
+          "use": "work"
+        },
+        {
+          "system": "email",
+          "value": "emily.jones@medcenter.com",
+          "use": "work"
+        }
+      ],
+      "address": [
+        {
+          "line": ["456 Wellness Street"],
+          "city": "Springfield",
+          "state": "IL",
+          "postalCode": "62701",
+          "country": "US"
+        }
+      ]
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "doctor-3",
+      "name": [
+        {
+          "family": "Chen",
+          "given": ["Li"],
+          "prefix": ["Dr."]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1980-04-12",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+1-800-555-1003",
+          "use": "work"
+        },
+        {
+          "system": "email",
+          "value": "li.chen@regionalhospital.org",
+          "use": "work"
+        }
+      ],
+      "address": [
+        {
+          "line": ["789 Health Avenue"],
+          "city": "Lakeside",
+          "state": "CA",
+          "postalCode": "92040",
+          "country": "US"
+        }
+      ]
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "doctor-4",
+      "name": [
+        {
+          "family": "Garcia",
+          "given": ["Isabella"],
+          "prefix": ["Dr."]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1978-11-05",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+1-800-555-1004",
+          "use": "work"
+        },
+        {
+          "system": "email",
+          "value": "isabella.garcia@cityhospital.org",
+          "use": "work"
+        }
+      ],
+      "address": [
+        {
+          "line": ["101 Care Road"],
+          "city": "Hilltop",
+          "state": "TX",
+          "postalCode": "75001",
+          "country": "US"
+        }
+      ]
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "doctor-5",
+      "name": [
+        {
+          "family": "Patel",
+          "given": ["Raj"],
+          "prefix": ["Dr."]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1985-02-28",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+1-800-555-1005",
+          "use": "work"
+        },
+        {
+          "system": "email",
+          "value": "raj.patel@greenvalley.org",
+          "use": "work"
+        }
+      ],
+      "address": [
+        {
+          "line": ["202 Healing Way"],
+          "city": "Riverside",
+          "state": "FL",
+          "postalCode": "32004",
+          "country": "US"
+        }
+      ]
+    }
+]
+  
