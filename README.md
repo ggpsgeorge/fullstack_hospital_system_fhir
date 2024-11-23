@@ -2,15 +2,17 @@
 
 Fullstack project that uses Spring Boot for the backend and Next.js for the frontend.
 
-Hospital Management System. Manage Patients, Hospitals and Doctors data.
+Hospital Management System to manage Patients, Hospitals and Doctors data.
 
 # Backend
 
 Simple REST API CRUD consuming and producing FHIR HL7 formats in JSON. Used the Patient and Organization ResourceType for this project. 
 
-The data folder has examples of the format. The schema produced was based on the patients_generated.json file attributes. 
+The data folder has examples of the format. The schemas produced were based on the data folder generated files.
 
 All business logic is being done on the Controller layer, for simplicity.
+
+The default server port is localhost:8181
 
 To run the backend:
 
@@ -18,11 +20,14 @@ To run the backend:
 docker compose up 
 mvn spring-boot:run
 ```
-The default server port is localhost:8181.
 
-[JSON response example](data/generated-json/patients_generated.json) of ResourceType Patient.
+To populate the database you can use the JSON generated examples with a post method on localhost:8181/api/patient/v1/ with a list of patients.
 
-[JSON response example](data/generated-json/organization_generated.json) of ResourceType Organizaiton: 
+JSON ResourceTypes response examples: 
+
+[ResourceType Patient](data/generated-json/patients_generated.json)
+
+[ResourceType Organization](data/generated-json/organization_generated.json)
 
 # Frontend
 
