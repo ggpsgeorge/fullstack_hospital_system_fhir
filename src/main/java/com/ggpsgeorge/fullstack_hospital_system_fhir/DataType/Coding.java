@@ -1,10 +1,17 @@
 package com.ggpsgeorge.fullstack_hospital_system_fhir.DataType;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class Coding {
     
+    @Column
     private String system;
+    @Column
     private String code;
+    @Column
     private String display;
 
 

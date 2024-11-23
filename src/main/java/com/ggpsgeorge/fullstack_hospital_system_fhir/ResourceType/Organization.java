@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Objects;
 
 import com.ggpsgeorge.fullstack_hospital_system_fhir.DataType.Address;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.DataType.Coding;
 import com.ggpsgeorge.fullstack_hospital_system_fhir.DataType.Telecom;
-import com.ggpsgeorge.fullstack_hospital_system_fhir.DataType.Type;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -23,25 +23,25 @@ public class Organization {
     private String id;
     @Column
     private String name;
-    @ElementCollection
     @Embedded
-    private List<Type> type = new ArrayList<>();
     @ElementCollection
+    private List<Coding> coding = new ArrayList<>();
     @Embedded
+    @ElementCollection
     private List<Telecom> telecom = new ArrayList<>();
-    @ElementCollection
     @Embedded
+    @ElementCollection
     private List<Address> address = new ArrayList<>();
 
 
     public Organization() {
     }
 
-    public Organization(String resourceType, String id, String name, List<Type> type, List<Telecom> telecom, List<Address> address) {
+    public Organization(String resourceType, String id, String name, List<Coding> coding, List<Telecom> telecom, List<Address> address) {
         this.resourceType = resourceType;
         this.id = id;
         this.name = name;
-        this.type = type;
+        this.coding = coding;
         this.telecom = telecom;
         this.address = address;
     }
@@ -70,12 +70,12 @@ public class Organization {
         this.name = name;
     }
 
-    public List<Type> getType() {
-        return this.type;
+    public List<Coding> getCoding() {
+        return this.coding;
     }
 
-    public void setType(List<Type> type) {
-        this.type = type;
+    public void setCoding(List<Coding> coding) {
+        this.coding = coding;
     }
 
     public List<Telecom> getTelecom() {
@@ -109,8 +109,8 @@ public class Organization {
         return this;
     }
 
-    public Organization type(List<Type> type) {
-        setType(type);
+    public Organization coding(List<Coding> coding) {
+        setCoding(coding);
         return this;
     }
 
@@ -132,12 +132,12 @@ public class Organization {
             return false;
         }
         Organization organization = (Organization) o;
-        return Objects.equals(resourceType, organization.resourceType) && Objects.equals(id, organization.id) && Objects.equals(name, organization.name) && Objects.equals(type, organization.type) && Objects.equals(telecom, organization.telecom) && Objects.equals(address, organization.address);
+        return Objects.equals(resourceType, organization.resourceType) && Objects.equals(id, organization.id) && Objects.equals(name, organization.name) && Objects.equals(coding, organization.coding) && Objects.equals(telecom, organization.telecom) && Objects.equals(address, organization.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, id, name, type, telecom, address);
+        return Objects.hash(resourceType, id, name, coding, telecom, address);
     }
 
     @Override
@@ -146,7 +146,7 @@ public class Organization {
             " resourceType='" + getResourceType() + "'" +
             ", id='" + getId() + "'" +
             ", name='" + getName() + "'" +
-            ", type='" + getType() + "'" +
+            ", coding='" + getCoding() + "'" +
             ", telecom='" + getTelecom() + "'" +
             ", address='" + getAddress() + "'" +
             "}";

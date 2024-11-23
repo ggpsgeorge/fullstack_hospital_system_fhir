@@ -14,36 +14,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ggpsgeorge.fullstack_hospital_system_fhir.ResourceType.Patient;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.ResourceType.Organization;
 
 @RestController
-@RequestMapping("/api/patient/v1")
-public class PatientController {
-
-    @Autowired
-    PatientRepository patientRepository;
+@RequestMapping("/api/organization/v1")
+public class OrganizationController {
+    
+    @Autowired 
+    OrganizationRepository organizationRepository;
 
     @PostMapping("/")
-    public ResponseEntity<List<Patient>> addPatients(@RequestBody List<Patient> patients) {
-        return ResponseEntity.accepted().body(patientRepository.saveAll(patients)); 
+    public ResponseEntity<List<Organization>> addOrganization(@RequestBody List<Organization> organizations) {
+        return ResponseEntity.accepted().body(organizationRepository.saveAll(organizations));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Patient> getPatient(@PathVariable String id){
+    public ResponseEntity<Organization> getOrganization(@PathVariable String id) {
         try {
-            Patient patient = patientRepository.findById(id).orElseThrow();
-            return ResponseEntity.ok().body(patient);
+            Organization organization = organizationRepository.findById(id).orElseThrow();
+            return ResponseEntity.ok().body(organization);
         } catch(NoSuchElementException e) {
             return ResponseEntity.notFound().build();
         } 
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Patient> updatePatient(@PathVariable String id, @RequestBody Patient newPatient) {
+    public ResponseEntity<Organization> updateOrganization(@PathVariable String id, @RequestBody Organization newOrganization) {
         try {
-            patientRepository.findById(id).orElseThrow();
-            Patient patient = patientRepository.save(newPatient);
-            return ResponseEntity.accepted().body(patient);
+            organizationRepository.findById(id).orElseThrow();
+            Organization organization = organizationRepository.save(newOrganization);
+            return ResponseEntity.accepted().body(organization);
             
         } catch (NoSuchElementException e) {
             return ResponseEntity.notFound().build();
@@ -51,10 +51,10 @@ public class PatientController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deletePatient(@PathVariable String id) {
+    public ResponseEntity<String> deleteOrganization(@PathVariable String id) {
         try {
-            patientRepository.findById(id).orElseThrow();
-            patientRepository.deleteById(id);
+            organizationRepository.findById(id).orElseThrow();
+            organizationRepository.deleteById(id);
             return ResponseEntity.noContent().build();
         } catch(NoSuchElementException e) {
             return ResponseEntity.notFound().build();

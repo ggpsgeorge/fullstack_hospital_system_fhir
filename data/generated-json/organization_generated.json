@@ -3,15 +3,11 @@
     "resourceType": "Organization",
     "id": "hospital-1",
     "name": "City General Hospital",
-    "type": [
+    "coding": [
       {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-            "code": "prov",
-            "display": "Healthcare Provider"
-          }
-        ]
+        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+        "code": "prov",
+        "display": "Healthcare Provider"
       }
     ],
     "telecom": [
@@ -40,15 +36,11 @@
     "resourceType": "Organization",
     "id": "hospital-2",
     "name": "Green Valley Medical Center",
-    "type": [
+    "coding": [
       {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-            "code": "prov",
-            "display": "Healthcare Provider"
-          }
-        ]
+        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+        "code": "prov",
+        "display": "Healthcare Provider"
       }
     ],
     "telecom": [
@@ -77,15 +69,11 @@
     "resourceType": "Organization",
     "id": "hospital-3",
     "name": "Lakeside Regional Hospital",
-    "type": [
+    "coding": [
       {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-            "code": "prov",
-            "display": "Healthcare Provider"
-          }
-        ]
+        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+        "code": "prov",
+        "display": "Healthcare Provider"
       }
     ],
     "telecom": [
