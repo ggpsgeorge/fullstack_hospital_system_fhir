@@ -13,6 +13,9 @@ import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Patient {
@@ -31,8 +34,12 @@ public class Patient {
     @Embedded
     @ElementCollection
     private List<Address> address = new ArrayList<>();
-    @Embedded
-    @ElementCollection
+    @ManyToMany
+    @JoinTable(
+        name = "doctor_aiding",
+        joinColumns=@JoinColumn(name="patient_id"),
+        inverseJoinColumns=@JoinColumn(name="doctor_id")
+    )
     private List<Practioner> doctors = new ArrayList<>();
 
 

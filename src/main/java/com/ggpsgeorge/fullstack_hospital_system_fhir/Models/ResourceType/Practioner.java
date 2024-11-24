@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Address;
 import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Name;
 import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Telecom;
@@ -14,6 +15,7 @@ import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Practioner {
@@ -35,12 +37,15 @@ public class Practioner {
     @Embedded
     @ElementCollection
     private List<Address> address = new ArrayList<>();
+    @ManyToMany(mappedBy="doctors")
+    @JsonIgnore
+    private List<Patient> patients = new ArrayList<>();
 
 
     public Practioner() {
     }
 
-    public Practioner(String resourceType, String id, List<Name> name, String gender, LocalDate birthDate, List<Telecom> telecom, List<Address> address) {
+    public Practioner(String resourceType, String id, List<Name> name, String gender, LocalDate birthDate, List<Telecom> telecom, List<Address> address, List<Patient> patients) {
         this.resourceType = resourceType;
         this.id = id;
         this.name = name;
@@ -48,6 +53,7 @@ public class Practioner {
         this.birthDate = birthDate;
         this.telecom = telecom;
         this.address = address;
+        this.patients = patients;
     }
 
     public String getResourceType() {
@@ -106,6 +112,14 @@ public class Practioner {
         this.address = address;
     }
 
+    public List<Patient> getPatients() {
+        return this.patients;
+    }
+
+    public void setPatients(List<Patient> patients) {
+        this.patients = patients;
+    }
+
     public Practioner resourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -141,6 +155,11 @@ public class Practioner {
         return this;
     }
 
+    public Practioner patients(List<Patient> patients) {
+        setPatients(patients);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -149,12 +168,12 @@ public class Practioner {
             return false;
         }
         Practioner practioner = (Practioner) o;
-        return Objects.equals(resourceType, practioner.resourceType) && Objects.equals(id, practioner.id) && Objects.equals(name, practioner.name) && Objects.equals(gender, practioner.gender) && Objects.equals(birthDate, practioner.birthDate) && Objects.equals(telecom, practioner.telecom) && Objects.equals(address, practioner.address);
+        return Objects.equals(resourceType, practioner.resourceType) && Objects.equals(id, practioner.id) && Objects.equals(name, practioner.name) && Objects.equals(gender, practioner.gender) && Objects.equals(birthDate, practioner.birthDate) && Objects.equals(telecom, practioner.telecom) && Objects.equals(address, practioner.address) && Objects.equals(patients, practioner.patients);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, id, name, gender, birthDate, telecom, address);
+        return Objects.hash(resourceType, id, name, gender, birthDate, telecom, address, patients);
     }
 
     @Override
@@ -167,7 +186,9 @@ public class Practioner {
             ", birthDate='" + getBirthDate() + "'" +
             ", telecom='" + getTelecom() + "'" +
             ", address='" + getAddress() + "'" +
+            ", patients='" + getPatients() + "'" +
             "}";
     }
+
 
 }
