@@ -1,4 +1,4 @@
-package com.ggpsgeorge.fullstack_hospital_system_fhir.DataType;
+package com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType;
 
 import java.util.ArrayList;
 import java.util.List;

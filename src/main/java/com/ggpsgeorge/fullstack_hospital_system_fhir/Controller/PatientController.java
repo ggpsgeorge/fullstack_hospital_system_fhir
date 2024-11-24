@@ -1,4 +1,4 @@
-package com.ggpsgeorge.fullstack_hospital_system_fhir;
+package com.ggpsgeorge.fullstack_hospital_system_fhir.Controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ggpsgeorge.fullstack_hospital_system_fhir.ResourceType.Patient;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.ResourceType.Patient;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Repository.PatientRepository;
 
 @RestController
 @RequestMapping("/api/patient/v1")

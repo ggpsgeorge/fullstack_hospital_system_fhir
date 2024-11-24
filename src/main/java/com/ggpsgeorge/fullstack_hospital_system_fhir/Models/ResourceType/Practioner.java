@@ -1,12 +1,13 @@
-package com.ggpsgeorge.fullstack_hospital_system_fhir.ResourceType;
+package com.ggpsgeorge.fullstack_hospital_system_fhir.Models.ResourceType;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import com.ggpsgeorge.fullstack_hospital_system_fhir.DataType.Address;
-import com.ggpsgeorge.fullstack_hospital_system_fhir.DataType.Name;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Address;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Name;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Telecom;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -15,7 +16,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Patient {
+public class Practioner {
 
     @Column
     private String resourceType;
@@ -30,18 +31,22 @@ public class Patient {
     private LocalDate birthDate;
     @Embedded
     @ElementCollection
+    private List<Telecom> telecom = new ArrayList<>();
+    @Embedded
+    @ElementCollection
     private List<Address> address = new ArrayList<>();
 
 
-    public Patient() {
+    public Practioner() {
     }
 
-    public Patient(String resourceType, String id, List<Name> name, String gender, LocalDate birthDate, List<Address> address) {
+    public Practioner(String resourceType, String id, List<Name> name, String gender, LocalDate birthDate, List<Telecom> telecom, List<Address> address) {
         this.resourceType = resourceType;
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.birthDate = birthDate;
+        this.telecom = telecom;
         this.address = address;
     }
 
@@ -85,6 +90,14 @@ public class Patient {
         this.birthDate = birthDate;
     }
 
+    public List<Telecom> getTelecom() {
+        return this.telecom;
+    }
+
+    public void setTelecom(List<Telecom> telecom) {
+        this.telecom = telecom;
+    }
+
     public List<Address> getAddress() {
         return this.address;
     }
@@ -93,32 +106,37 @@ public class Patient {
         this.address = address;
     }
 
-    public Patient resourceType(String resourceType) {
+    public Practioner resourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
     }
 
-    public Patient id(String id) {
+    public Practioner id(String id) {
         setId(id);
         return this;
     }
 
-    public Patient name(List<Name> name) {
+    public Practioner name(List<Name> name) {
         setName(name);
         return this;
     }
 
-    public Patient gender(String gender) {
+    public Practioner gender(String gender) {
         setGender(gender);
         return this;
     }
 
-    public Patient birthDate(LocalDate birthDate) {
+    public Practioner birthDate(LocalDate birthDate) {
         setBirthDate(birthDate);
         return this;
     }
 
-    public Patient address(List<Address> address) {
+    public Practioner telecom(List<Telecom> telecom) {
+        setTelecom(telecom);
+        return this;
+    }
+
+    public Practioner address(List<Address> address) {
         setAddress(address);
         return this;
     }
@@ -127,16 +145,16 @@ public class Patient {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Patient)) {
+        if (!(o instanceof Practioner)) {
             return false;
         }
-        Patient patient = (Patient) o;
-        return Objects.equals(resourceType, patient.resourceType) && Objects.equals(id, patient.id) && Objects.equals(name, patient.name) && Objects.equals(gender, patient.gender) && Objects.equals(birthDate, patient.birthDate) && Objects.equals(address, patient.address);
+        Practioner practioner = (Practioner) o;
+        return Objects.equals(resourceType, practioner.resourceType) && Objects.equals(id, practioner.id) && Objects.equals(name, practioner.name) && Objects.equals(gender, practioner.gender) && Objects.equals(birthDate, practioner.birthDate) && Objects.equals(telecom, practioner.telecom) && Objects.equals(address, practioner.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, id, name, gender, birthDate, address);
+        return Objects.hash(resourceType, id, name, gender, birthDate, telecom, address);
     }
 
     @Override
@@ -147,9 +165,9 @@ public class Patient {
             ", name='" + getName() + "'" +
             ", gender='" + getGender() + "'" +
             ", birthDate='" + getBirthDate() + "'" +
+            ", telecom='" + getTelecom() + "'" +
             ", address='" + getAddress() + "'" +
             "}";
     }
-
 
 }

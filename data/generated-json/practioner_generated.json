@@ -4,6 +4,7 @@
       "id": "doctor-1",
       "name": [
         {
+          "user": "official",
           "family": "Smith",
           "given": ["John"],
           "prefix": ["Dr."]
@@ -38,6 +39,7 @@
       "id": "doctor-2",
       "name": [
         {
+          "user": "official",
           "family": "Jones",
           "given": ["Emily"],
           "prefix": ["Dr."]
@@ -72,6 +74,7 @@
       "id": "doctor-3",
       "name": [
         {
+          "user": "official",
           "family": "Chen",
           "given": ["Li"],
           "prefix": ["Dr."]
@@ -106,6 +109,7 @@
       "id": "doctor-4",
       "name": [
         {
+          "user": "official",
           "family": "Garcia",
           "given": ["Isabella"],
           "prefix": ["Dr."]
@@ -140,6 +144,7 @@
       "id": "doctor-5",
       "name": [
         {
+          "user": "official",
           "family": "Patel",
           "given": ["Raj"],
           "prefix": ["Dr."]

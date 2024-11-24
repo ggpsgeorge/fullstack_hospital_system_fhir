@@ -1,12 +1,12 @@
-package com.ggpsgeorge.fullstack_hospital_system_fhir.ResourceType;
+package com.ggpsgeorge.fullstack_hospital_system_fhir.Models.ResourceType;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import com.ggpsgeorge.fullstack_hospital_system_fhir.DataType.Address;
-import com.ggpsgeorge.fullstack_hospital_system_fhir.DataType.Coding;
-import com.ggpsgeorge.fullstack_hospital_system_fhir.DataType.Telecom;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Address;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Coding;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Telecom;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;

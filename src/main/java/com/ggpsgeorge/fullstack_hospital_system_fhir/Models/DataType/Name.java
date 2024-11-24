@@ -1,4 +1,4 @@
-package com.ggpsgeorge.fullstack_hospital_system_fhir.DataType;
+package com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +15,18 @@ public class Name {
     private String family;
     @Column
     private List<String> given = new ArrayList<>();
+    @Column
+    private List<String> prefix = new ArrayList<>();
 
 
     public Name() {
     }
 
-    public Name(String use, String family, List<String> given) {
+    public Name(String use, String family, List<String> given, List<String> prefix) {
         this.use = use;
         this.family = family;
         this.given = given;
+        this.prefix = prefix;
     }
 
     public String getUse() {
@@ -50,6 +53,14 @@ public class Name {
         this.given = given;
     }
 
+    public List<String> getPrefix() {
+        return this.prefix;
+    }
+
+    public void setPrefix(List<String> prefix) {
+        this.prefix = prefix;
+    }
+
     public Name use(String use) {
         setUse(use);
         return this;
@@ -65,6 +76,11 @@ public class Name {
         return this;
     }
 
+    public Name prefix(List<String> prefix) {
+        setPrefix(prefix);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -73,12 +89,12 @@ public class Name {
             return false;
         }
         Name name = (Name) o;
-        return Objects.equals(use, name.use) && Objects.equals(family, name.family) && Objects.equals(given, name.given);
+        return Objects.equals(use, name.use) && Objects.equals(family, name.family) && Objects.equals(given, name.given) && Objects.equals(prefix, name.prefix);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(use, family, given);
+        return Objects.hash(use, family, given, prefix);
     }
 
     @Override
@@ -87,8 +103,7 @@ public class Name {
             " use='" + getUse() + "'" +
             ", family='" + getFamily() + "'" +
             ", given='" + getGiven() + "'" +
+            ", prefix='" + getPrefix() + "'" +
             "}";
     }
-
-    
 }
