@@ -39,6 +39,7 @@ public class Practioner {
     private List<Address> address = new ArrayList<>();
     @ManyToMany(mappedBy="doctors")
     @JsonIgnore
+    // Better use Set instead of List, because when deleting entries it will be slower
     private List<Patient> patients = new ArrayList<>();
 
 

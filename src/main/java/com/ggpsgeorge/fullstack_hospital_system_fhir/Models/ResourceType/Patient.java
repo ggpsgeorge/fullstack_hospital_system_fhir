@@ -40,6 +40,7 @@ public class Patient {
         joinColumns=@JoinColumn(name="patient_id"),
         inverseJoinColumns=@JoinColumn(name="doctor_id")
     )
+    // Is good practice to use Set instead of list in a ManyToMany, because when deleting the jpa uses a lot of resources
     private List<Practioner> doctors = new ArrayList<>();
 
 
