@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.ResourceType.Patient;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.ResourceType.Practioner;
 import com.ggpsgeorge.fullstack_hospital_system_fhir.Repository.PatientRepository;
+import com.ggpsgeorge.fullstack_hospital_system_fhir.Repository.PractionerRepository;
 
 @RestController
 @RequestMapping("/api/patient/v1")
@@ -23,10 +25,28 @@ public class PatientController {
 
     @Autowired
     PatientRepository patientRepository;
+    @Autowired
+    PractionerRepository practionerRepository;
 
     @PostMapping("/")
     public ResponseEntity<List<Patient>> addPatients(@RequestBody List<Patient> patients) {
         return ResponseEntity.accepted().body(patientRepository.saveAll(patients)); 
+    }
+
+    @PostMapping("/{id}/register-doctor/{doctorId}")
+    public ResponseEntity<Patient> registerDoctorToPatient(@PathVariable String id, @PathVariable String doctorId) {
+        try {
+            Practioner doctor = practionerRepository.findById(doctorId).orElseThrow();
+            Patient patient = patientRepository.findById(id).orElseThrow();
+            List<Practioner> patientDoctors = patient.getDoctors();
+            patientDoctors.add(doctor);
+            patient.setDoctors(patientDoctors);
+            
+            return ResponseEntity.accepted().body(patientRepository.save(patient));
+
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @GetMapping("/{id}")

@@ -31,18 +31,22 @@ public class Patient {
     @Embedded
     @ElementCollection
     private List<Address> address = new ArrayList<>();
+    @Embedded
+    @ElementCollection
+    private List<Practioner> doctors = new ArrayList<>();
 
 
     public Patient() {
     }
 
-    public Patient(String resourceType, String id, List<Name> name, String gender, LocalDate birthDate, List<Address> address) {
+    public Patient(String resourceType, String id, List<Name> name, String gender, LocalDate birthDate, List<Address> address, List<Practioner> doctors) {
         this.resourceType = resourceType;
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.birthDate = birthDate;
         this.address = address;
+        this.doctors = doctors;
     }
 
     public String getResourceType() {
@@ -93,6 +97,14 @@ public class Patient {
         this.address = address;
     }
 
+    public List<Practioner> getDoctors() {
+        return this.doctors;
+    }
+
+    public void setDoctors(List<Practioner> doctors) {
+        this.doctors = doctors;
+    }
+
     public Patient resourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -123,6 +135,11 @@ public class Patient {
         return this;
     }
 
+    public Patient doctors(List<Practioner> doctors) {
+        setDoctors(doctors);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -131,12 +148,12 @@ public class Patient {
             return false;
         }
         Patient patient = (Patient) o;
-        return Objects.equals(resourceType, patient.resourceType) && Objects.equals(id, patient.id) && Objects.equals(name, patient.name) && Objects.equals(gender, patient.gender) && Objects.equals(birthDate, patient.birthDate) && Objects.equals(address, patient.address);
+        return Objects.equals(resourceType, patient.resourceType) && Objects.equals(id, patient.id) && Objects.equals(name, patient.name) && Objects.equals(gender, patient.gender) && Objects.equals(birthDate, patient.birthDate) && Objects.equals(address, patient.address) && Objects.equals(doctors, patient.doctors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, id, name, gender, birthDate, address);
+        return Objects.hash(resourceType, id, name, gender, birthDate, address, doctors);
     }
 
     @Override
@@ -148,8 +165,8 @@ public class Patient {
             ", gender='" + getGender() + "'" +
             ", birthDate='" + getBirthDate() + "'" +
             ", address='" + getAddress() + "'" +
+            ", doctors='" + getDoctors() + "'" +
             "}";
     }
-
 
 }
