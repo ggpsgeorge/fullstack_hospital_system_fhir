@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.ResourceType.Organiz
 import com.ggpsgeorge.fullstack_hospital_system_fhir.Repository.OrganizationRepository;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/organization/v1")
 public class OrganizationController {
     
