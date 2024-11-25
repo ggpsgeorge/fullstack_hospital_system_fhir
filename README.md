@@ -27,7 +27,9 @@ JSON ResourceTypes response examples:
 
 [ResourceType Patient](data/generated-json/patients_generated.json)
 
-[ResourceType Organization](data/generated-json/organization_generated.json)
+[ResourceType Practioner, i.e, Doctor](data/generated-json/practioner_generated.json)
+
+[ResourceType Organization, i.e, Hostpital](data/generated-json/organization_generated.json)
 
 # Frontend
 
@@ -37,5 +39,5 @@ The frontend is made using Next.js.
 Install dependencies and run the frontend: 
 ```sh
 npm install
-npm start dev
+npm run dev
 ```

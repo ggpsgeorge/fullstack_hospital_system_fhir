@@ -35,32 +35,32 @@ build/
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-fhir-frontend/node_modules
-fhir-frontend/.pnp
-fhir-frontend/.pnp.*
-fhir-frontend/.yarn/*
-fhir-frontend/!.yarn/patches
-fhir-frontend/!.yarn/plugins
-fhir-frontend/!.yarn/releases
-fhir-frontend/!.yarn/versions
+fhir_frontend/node_modules
+fhir_frontend/.pnp
+fhir_frontend/.pnp.*
+fhir_frontend/.yarn/*
+fhir_frontend/!.yarn/patches
+fhir_frontend/!.yarn/plugins
+fhir_frontend/!.yarn/releases
+fhir_frontend/!.yarn/versions
 # testing
-fhir-frontend/coverage
+fhir_frontend/coverage
 # next.js
-fhir-frontend/.next/
-fhir-frontend/out/
+fhir_frontend/.next/
+fhir_frontend/out/
 # production
-fhir-frontend/build
+fhir_frontend/build
 # misc
-fhir-frontend/.DS_Store
-fhir-frontend/*.pem
+fhir_frontend/.DS_Store
+fhir_frontend/*.pem
 # debug
-fhir-frontend/npm-debug.log*
-fhir-frontend/yarn-debug.log*
-fhir-frontend/yarn-error.log*
+fhir_frontend/npm-debug.log*
+fhir_frontend/yarn-debug.log*
+fhir_frontend/yarn-error.log*
 # env files (can opt-in for committing if needed)
-fhir-frontend/.env*
+fhir_frontend/.env*
 # vercel
-fhir-frontend/.vercel
+fhir_frontend/.vercel
 # typescript
-fhir-frontend/*.tsbuildinfo
-fhir-frontend/next-env.d.ts
+fhir_frontend/*.tsbuildinfo
+fhir_frontend/next-env.d.ts
