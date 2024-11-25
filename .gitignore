@@ -34,33 +34,27 @@ build/
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-fhir_frontend/node_modules
-fhir_frontend/.pnp
-fhir_frontend/.pnp.*
-fhir_frontend/.yarn/*
-fhir_frontend/!.yarn/patches
-fhir_frontend/!.yarn/plugins
-fhir_frontend/!.yarn/releases
-fhir_frontend/!.yarn/versions
-# testing
-fhir_frontend/coverage
-# next.js
-fhir_frontend/.next/
-fhir_frontend/out/
-# production
-fhir_frontend/build
-# misc
-fhir_frontend/.DS_Store
-fhir_frontend/*.pem
-# debug
-fhir_frontend/npm-debug.log*
-fhir_frontend/yarn-debug.log*
-fhir_frontend/yarn-error.log*
-# env files (can opt-in for committing if needed)
-fhir_frontend/.env*
-# vercel
-fhir_frontend/.vercel
-# typescript
-fhir_frontend/*.tsbuildinfo
-fhir_frontend/next-env.d.ts
+# Logs
+src/main/client/fullstack_hospital_system_fhir_frontend/logs
+src/main/client/fullstack_hospital_system_fhir_frontend/*.log
+src/main/client/fullstack_hospital_system_fhir_frontend/npm-debug.log*
+src/main/client/fullstack_hospital_system_fhir_frontend/yarn-debug.log*
+src/main/client/fullstack_hospital_system_fhir_frontend/yarn-error.log*
+src/main/client/fullstack_hospital_system_fhir_frontend/pnpm-debug.log*
+src/main/client/fullstack_hospital_system_fhir_frontend/lerna-debug.log*
+
+src/main/client/fullstack_hospital_system_fhir_frontend/node_modules
+src/main/client/fullstack_hospital_system_fhir_frontend/dist
+src/main/client/fullstack_hospital_system_fhir_frontend/dist-ssr
+src/main/client/fullstack_hospital_system_fhir_frontend/*.local
+
+# Editor directories and files
+src/main/client/fullstack_hospital_system_fhir_frontend/.vscode/*
+src/main/client/fullstack_hospital_system_fhir_frontend/!.vscode/extensions.json
+src/main/client/fullstack_hospital_system_fhir_frontend/.idea
+src/main/client/fullstack_hospital_system_fhir_frontend/.DS_Store
+src/main/client/fullstack_hospital_system_fhir_frontend/*.suo
+src/main/client/fullstack_hospital_system_fhir_frontend/*.ntvs*
+src/main/client/fullstack_hospital_system_fhir_frontend/*.njsproj
+src/main/client/fullstack_hospital_system_fhir_frontend/*.sln
+src/main/client/fullstack_hospital_system_fhir_frontend/*.sw?
