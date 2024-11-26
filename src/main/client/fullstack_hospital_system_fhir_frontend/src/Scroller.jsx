@@ -1,7 +1,11 @@
-function Scroller() {
+function Scroller(props) {
     
-    const items = ["Whatever", "Sup", "Yeah"]
-    
+    let newItems = ["Whatever", "Sup", "Yeah"]
+    let items = []
+    items.push(props.name)
+    newItems.forEach((item) => {
+        items.push(item)
+    })
     return(
         <div className="scroller">
             {items.map((item) => {
