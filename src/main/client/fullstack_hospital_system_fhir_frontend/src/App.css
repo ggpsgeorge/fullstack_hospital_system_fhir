@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.scroller {
+  height: 100px;
+  overflow: scroll;
+}
