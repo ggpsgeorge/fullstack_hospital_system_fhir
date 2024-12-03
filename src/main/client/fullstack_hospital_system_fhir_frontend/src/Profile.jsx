@@ -1,7 +1,7 @@
-function Profile() {
+function Profile(props) {
     return(
         <div className="profile">
-            <h2>Profile Name</h2>
+            <h2>{props.name}</h2>
         </div>
     );
 }

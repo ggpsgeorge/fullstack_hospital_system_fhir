@@ -42,6 +42,17 @@
 }
 
 .scroller {
+  border: 10px solid red;
   height: 100px;
   overflow: scroll;
+}
+
+.profile {
+  width: 200px;
+  border: 10px solid gold;
+}
+
+.scroller .profile {
+  text-align: left;
+  padding-left: 20px;
 }

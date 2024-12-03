@@ -61,6 +61,11 @@ public class PatientController {
         } 
     }
 
+    @GetMapping("/")
+    public ResponseEntity<List<Patient>> getPatients() {
+        return ResponseEntity.ok().body(patientRepository.findAll());
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Patient> updatePatient(@PathVariable String id, @RequestBody Patient newPatient) {
         try {
