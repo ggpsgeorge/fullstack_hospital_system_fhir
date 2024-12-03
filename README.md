@@ -29,11 +29,12 @@ JSON ResourceTypes response examples:
 
 [ResourceType Practioner, i.e, Doctor](data/generated-json/practioner_generated.json)
 
-[ResourceType Organization, i.e, Hostpital](data/generated-json/organization_generated.json)
+[ResourceType Organization, i.e, Hospital](data/generated-json/organization_generated.json)
 
 # Frontend
 
 WORKING IN PROGRESS
+
 The frontend is made using Vite.
 
 Install dependencies and run the frontend: 
