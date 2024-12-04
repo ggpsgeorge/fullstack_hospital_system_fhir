@@ -41,6 +41,11 @@ public class PractionerController {
         } 
     }
 
+    @GetMapping("/")
+    public ResponseEntity<List<Practioner>> getPractioners() {
+        return ResponseEntity.ok().body(practionerRepository.findAll());
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Practioner> updatePractioner(@PathVariable String id, @RequestBody Practioner newPractioner) {
         try {

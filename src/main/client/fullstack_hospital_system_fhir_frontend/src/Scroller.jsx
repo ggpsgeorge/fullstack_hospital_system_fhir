@@ -1,21 +1,43 @@
 import Profile from "./Profile";
+import { useState, useEffect } from "react";
 
 function Scroller(props) {
+
+    const [jsonItems, setJsonItems] = useState([])
+
+    useEffect(() => {
+        const fetchData = async() => {
+            let url = ''
+            if(props.resourceType === 'Patient') {
+                url = 'http://localhost:8181/api/patient/v1/'
+            } else if(props.resourceType === 'Practioner') {
+                url = 'http://localhost:8181/api/practioner/v1/'
+            }
+            const response = await fetch(url)
+            const data = await response.json()
+            setJsonItems(data)
+            return data
+        }
+
+        fetchData()
+            .catch(console.error);
+
+    }, [])
     
-    if(!props.patients.length) {
+    if(!jsonItems.length) {
         return(
             <div className="scroller">
-                <Profile></Profile>
+                <Profile name="Loading ..."></Profile>
             </div>
         );
     }
 
     return(
         <div className="scroller">
-            {props.patients.map((patient) => {
+            {jsonItems.map((item) => {
                 return(
                     <div>
-                        <Profile name={patient.name[0].given[0]}></Profile>
+                        <Profile name={item.name[0].given[0] + ` ` + item.name[0].family}></Profile>
                     </div>
                 );
             })}
