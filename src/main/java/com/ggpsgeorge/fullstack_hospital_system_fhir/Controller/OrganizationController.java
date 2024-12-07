@@ -41,6 +41,11 @@ public class OrganizationController {
         } 
     }
 
+    @GetMapping("/")
+    public ResponseEntity<List<Organization>> getOrganizations() {
+        return ResponseEntity.ok().body(organizationRepository.findAll());
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Organization> updateOrganization(@PathVariable String id, @RequestBody Organization newOrganization) {
         try {
