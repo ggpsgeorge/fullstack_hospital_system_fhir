@@ -5,6 +5,10 @@ function Scroller(props) {
 
     const [jsonItems, setJsonItems] = useState([])
 
+    const handleClick = (data) => {
+        console.log(data)
+    } 
+
     useEffect(() => {
         const fetchData = async() => {
             let url = ''
@@ -36,7 +40,7 @@ function Scroller(props) {
         <div className="scroller">
             {jsonItems.map((item) => {
                 return(
-                    <div>
+                    <div onClick={() => handleClick(item)}>
                         <Profile name={item.name[0].given[0] + ` ` + item.name[0].family}></Profile>
                     </div>
                 );
