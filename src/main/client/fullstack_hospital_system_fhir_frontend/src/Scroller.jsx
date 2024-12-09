@@ -1,7 +1,7 @@
 import Profile from "./Profile";
 import { useState, useEffect } from "react";
 
-function Scroller(props) {
+function Scroller({resourceType}) {
 
     const [jsonItems, setJsonItems] = useState([])
 
@@ -12,9 +12,9 @@ function Scroller(props) {
     useEffect(() => {
         const fetchData = async() => {
             let url = ''
-            if(props.resourceType === 'Patient') {
+            if(resourceType === 'Patient') {
                 url = 'http://localhost:8181/api/patient/v1/'
-            } else if(props.resourceType === 'Practioner') {
+            } else if(resourceType === 'Practioner') {
                 url = 'http://localhost:8181/api/practioner/v1/'
             }
             const response = await fetch(url)
@@ -26,7 +26,7 @@ function Scroller(props) {
         fetchData()
             .catch(console.error);
 
-    }, [])
+    }, [resourceType])
     
     if(!jsonItems.length) {
         return(
