@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Address;
 import com.ggpsgeorge.fullstack_hospital_system_fhir.Models.DataType.Name;
 
@@ -16,6 +17,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Patient {
@@ -42,12 +44,16 @@ public class Patient {
     )
     // Is good practice to use Set instead of list in a ManyToMany, because when deleting the jpa uses a lot of resources
     private List<Practioner> doctors = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name="hospital_id")
+    @JsonIgnore
+    private Organization hospital;
 
 
     public Patient() {
     }
 
-    public Patient(String resourceType, String id, List<Name> name, String gender, LocalDate birthDate, List<Address> address, List<Practioner> doctors) {
+    public Patient(String resourceType, String id, List<Name> name, String gender, LocalDate birthDate, List<Address> address, List<Practioner> doctors, Organization hospital) {
         this.resourceType = resourceType;
         this.id = id;
         this.name = name;
@@ -55,6 +61,7 @@ public class Patient {
         this.birthDate = birthDate;
         this.address = address;
         this.doctors = doctors;
+        this.hospital = hospital;
     }
 
     public String getResourceType() {
@@ -113,6 +120,14 @@ public class Patient {
         this.doctors = doctors;
     }
 
+    public Organization getHospital() {
+        return this.hospital;
+    }
+
+    public void setHospital(Organization hospital) {
+        this.hospital = hospital;
+    }
+
     public Patient resourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -148,6 +163,11 @@ public class Patient {
         return this;
     }
 
+    public Patient hospital(Organization hospital) {
+        setHospital(hospital);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -156,12 +176,12 @@ public class Patient {
             return false;
         }
         Patient patient = (Patient) o;
-        return Objects.equals(resourceType, patient.resourceType) && Objects.equals(id, patient.id) && Objects.equals(name, patient.name) && Objects.equals(gender, patient.gender) && Objects.equals(birthDate, patient.birthDate) && Objects.equals(address, patient.address) && Objects.equals(doctors, patient.doctors);
+        return Objects.equals(resourceType, patient.resourceType) && Objects.equals(id, patient.id) && Objects.equals(name, patient.name) && Objects.equals(gender, patient.gender) && Objects.equals(birthDate, patient.birthDate) && Objects.equals(address, patient.address) && Objects.equals(doctors, patient.doctors) && Objects.equals(hospital, patient.hospital);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, id, name, gender, birthDate, address, doctors);
+        return Objects.hash(resourceType, id, name, gender, birthDate, address, doctors, hospital);
     }
 
     @Override
@@ -174,7 +194,8 @@ public class Patient {
             ", birthDate='" + getBirthDate() + "'" +
             ", address='" + getAddress() + "'" +
             ", doctors='" + getDoctors() + "'" +
+            ", hospital='" + getHospital() + "'" +
             "}";
-    }
+    }    
 
 }

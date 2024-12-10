@@ -41,9 +41,11 @@ public class PatientController {
             Practioner doctor = practionerRepository.findById(doctorId).orElseThrow();
             Patient patient = patientRepository.findById(id).orElseThrow();
             List<Practioner> patientDoctors = patient.getDoctors();
+            
             patientDoctors.add(doctor);
             patient.setDoctors(patientDoctors);
             
+            practionerRepository.save(doctor);
             return ResponseEntity.accepted().body(patientRepository.save(patient));
 
         } catch (NoSuchElementException e) {

@@ -16,7 +16,7 @@ function App() {
       {/* <Profile name="Profile Name"></Profile> */}
       <h2>Hospital Management System</h2>
       <select name={resourceType} onChange={handleResourceTypeChange}>
-        <option>Select Data Type</option>
+        <option>Select a list</option>
         <option value="Patient">Patients</option>
         <option value="Practioner">Doctors</option>
         <option value="Organization">Hospitals</option>

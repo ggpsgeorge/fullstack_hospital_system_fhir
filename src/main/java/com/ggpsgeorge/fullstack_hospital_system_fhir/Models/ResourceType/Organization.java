@@ -13,6 +13,7 @@ import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Organization {
@@ -32,18 +33,21 @@ public class Organization {
     @Embedded
     @ElementCollection
     private List<Address> address = new ArrayList<>();
+    @OneToMany(mappedBy="hospital")
+    private List<Patient> patients = new ArrayList<>();
 
 
     public Organization() {
     }
 
-    public Organization(String resourceType, String id, String name, List<Coding> coding, List<Telecom> telecom, List<Address> address) {
+    public Organization(String resourceType, String id, String name, List<Coding> coding, List<Telecom> telecom, List<Address> address, List<Patient> patients) {
         this.resourceType = resourceType;
         this.id = id;
         this.name = name;
         this.coding = coding;
         this.telecom = telecom;
         this.address = address;
+        this.patients = patients;
     }
 
     public String getResourceType() {
@@ -94,6 +98,14 @@ public class Organization {
         this.address = address;
     }
 
+    public List<Patient> getPatients() {
+        return this.patients;
+    }
+
+    public void setPatients(List<Patient> patients) {
+        this.patients = patients;
+    }
+
     public Organization resourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -124,6 +136,11 @@ public class Organization {
         return this;
     }
 
+    public Organization patients(List<Patient> patients) {
+        setPatients(patients);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -132,12 +149,12 @@ public class Organization {
             return false;
         }
         Organization organization = (Organization) o;
-        return Objects.equals(resourceType, organization.resourceType) && Objects.equals(id, organization.id) && Objects.equals(name, organization.name) && Objects.equals(coding, organization.coding) && Objects.equals(telecom, organization.telecom) && Objects.equals(address, organization.address);
+        return Objects.equals(resourceType, organization.resourceType) && Objects.equals(id, organization.id) && Objects.equals(name, organization.name) && Objects.equals(coding, organization.coding) && Objects.equals(telecom, organization.telecom) && Objects.equals(address, organization.address) && Objects.equals(patients, organization.patients);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, id, name, coding, telecom, address);
+        return Objects.hash(resourceType, id, name, coding, telecom, address, patients);
     }
 
     @Override
@@ -149,6 +166,7 @@ public class Organization {
             ", coding='" + getCoding() + "'" +
             ", telecom='" + getTelecom() + "'" +
             ", address='" + getAddress() + "'" +
+            ", patients='" + getPatients() + "'" +
             "}";
     }
     
