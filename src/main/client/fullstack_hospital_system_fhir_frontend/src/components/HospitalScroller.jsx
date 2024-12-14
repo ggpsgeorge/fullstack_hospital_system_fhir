@@ -1,22 +1,13 @@
 import Profile from "./Profile";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
-function HospitalScroller() {
+function HospitalScroller({hospitals, onClick}) {
 
     const [jsonItems, setJsonItems] = useState([])
 
     useEffect(() => {
-        const fetchData = async() => {
-            let url = 'http://localhost:8181/api/organization/v1/'
-            const response = await fetch(url)
-            const data = await response.json()
-            setJsonItems(data)
-        }
-
-        fetchData()
-            .catch(console.error);
-
-    })
+        setJsonItems(hospitals)
+    }, [hospitals])
 
     if(!jsonItems.length) {
         return(
@@ -28,9 +19,9 @@ function HospitalScroller() {
 
     return(
         <div className="scroller-hospital">
-            {jsonItems.map((item) => {
+            {jsonItems.map((item, index) => {
                 return(
-                    <div>
+                    <div key={index}>
                         <Profile name={item.name}></Profile>
                     </div>
                 );
