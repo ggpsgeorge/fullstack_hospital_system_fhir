@@ -21,12 +21,13 @@ function Scrollers() {
         fetchHospitals(urlHospitals)
             .catch(console.error)
         
-    }, [hospitals])
+    }, [])
 
     function handleClick(event, hospitalsItem) {
         const hospitalId = event.target.id
+        console.log(hospitalId)
 
-        hospitalsItem.map((hospital, index) => {
+        hospitalsItem.map((hospital, _) => {
             if(hospital.id === hospitalId) {
                 setPatients(hospital.patients)
             }
@@ -40,12 +41,10 @@ function Scrollers() {
         </div>
     }
 
-    const patientsTest = [{"resourceType":"Patient","id":"patient-1","name":[{"use":"official","family":"Smile","given":["Greg"],"prefix":[]}],"gender":"male","birthDate":"1985-02-15","address":[{"use":"home","line":["456 Oak Street"],"city":"Los Angeles","state":"CA","postalCode":"90001","country":"USA"}],"doctors":[]}]
-
     return ( 
         <div>
             <div style={{display:"flex"}}>
-                <div onClick={() => handleClick(event, hospitals)}>
+                <div onClick={(event) => handleClick(event, hospitals)}>
                     <PrimaryScroller hospitals={hospitals}></PrimaryScroller>
                 </div>
                 <SecondaryScroller data={patients}></SecondaryScroller>

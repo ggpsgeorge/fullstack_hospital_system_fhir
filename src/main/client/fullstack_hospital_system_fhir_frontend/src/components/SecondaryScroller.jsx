@@ -1,5 +1,6 @@
 import Profile from "./Profile";
 import { useState, useEffect } from "react";
+import ProfilePatient from "./ProfilePatient";
 
 function SecondaryScroller({resourceType, data}) {
 
@@ -10,9 +11,7 @@ function SecondaryScroller({resourceType, data}) {
     } 
 
     useEffect(() => {
-        
         setJsonItems(data)
-
     }, [data])
     
     if(!jsonItems.length) {
@@ -27,8 +26,8 @@ function SecondaryScroller({resourceType, data}) {
         <div className="scroller">
             {jsonItems.map((item, index) => {
                 return(
-                    <div key={index} onClick={() => handleClick(item)}>
-                        <Profile name={JSON.stringify(item)}></Profile>
+                    <div key={index}>
+                        <ProfilePatient patient={item}></ProfilePatient>
                     </div>
                 );
             })}

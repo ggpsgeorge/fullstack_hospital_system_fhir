@@ -2,7 +2,7 @@ import Profile from "./Profile";
 import { useState, useEffect, useContext } from "react";
 import ProfileHospital from "./ProfileHospital";
 
-function PrimaryScroller({hospitals, onClick}) {
+function PrimaryScroller({hospitals}) {
 
     const [jsonItems, setJsonItems] = useState([])
 
