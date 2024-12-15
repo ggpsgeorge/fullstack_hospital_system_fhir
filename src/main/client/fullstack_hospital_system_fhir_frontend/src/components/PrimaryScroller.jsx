@@ -1,7 +1,8 @@
 import Profile from "./Profile";
 import { useState, useEffect, useContext } from "react";
+import ProfileHospital from "./ProfileHospital";
 
-function HospitalScroller({hospitals, onClick}) {
+function PrimaryScroller({hospitals, onClick}) {
 
     const [jsonItems, setJsonItems] = useState([])
 
@@ -22,7 +23,7 @@ function HospitalScroller({hospitals, onClick}) {
             {jsonItems.map((item, index) => {
                 return(
                     <div key={index}>
-                        <Profile name={item.name}></Profile>
+                        <ProfileHospital hospital={item}></ProfileHospital>
                     </div>
                 );
             })}
@@ -30,4 +31,4 @@ function HospitalScroller({hospitals, onClick}) {
     );
 }
 
-export default HospitalScroller;
+export default PrimaryScroller;
