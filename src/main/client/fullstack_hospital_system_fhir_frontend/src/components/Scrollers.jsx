@@ -3,6 +3,7 @@ import PrimaryScroller from "./PrimaryScroller";
 import SecondaryScroller from "./SecondaryScroller";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import PatientShow from "./PatientShow";
 
 
 function Scrollers() {
@@ -28,7 +29,6 @@ function Scrollers() {
 
     function handleClickHospital(event, hospitalsItems) {
         const hospitalId = event.target.id
-        console.log(hospitalId)
 
         hospitalsItems.map((hospital, _) => {
             if(hospital.id === hospitalId) {
@@ -39,8 +39,8 @@ function Scrollers() {
     }
 
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
     const [patient, setPatient] = useState({
         "resourceType": "Patient",
         "id": "patient-0",
@@ -73,11 +73,10 @@ function Scrollers() {
                 setPatient(patients[index])
             }
         })
-        // MODAL SHOW
+        
         handleShow()
-    }
 
-    
+    }
 
     if(!hospitals.length) {
         <div>
@@ -98,32 +97,12 @@ function Scrollers() {
                 </div>
             </div>
             <div>
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header>
-                    <Modal.Title>{patient.name[0].given[0] + ` ` + patient.name[0].family}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <div>
-                            <p>
-                                Date of Birth: {patient.birthDate}
-                            </p>
-                            <p>
-                                City: {patient.address[0].city + ` ` + 
-                                    patient.address[0].state}
-                            </p>
-                        </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    </Modal.Footer>
-                </Modal>
+                <PatientShow show={show} patient={patient}></PatientShow>
             </div>
             {/* <p>{JSON.stringify(hospitals)}</p> */}
-            <br></br>
             {/* <p>{JSON.stringify(patients)}</p> */}
-            <p>{JSON.stringify(patient)}</p>
+            {/* <p>{JSON.stringify(patient)}</p> */}
+            {/* <p>{JSON.stringify(show)}</p> */}
         </div>
      );
 }
