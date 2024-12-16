@@ -8,7 +8,7 @@ function App() {
   return(
     <>
       <div className='home'>
-        <h2 className='title'>Hospital Management System</h2>
+        <h2 className='title'>Hospitals Panel</h2>
         <Scrollers></Scrollers>
       </div>
     </>

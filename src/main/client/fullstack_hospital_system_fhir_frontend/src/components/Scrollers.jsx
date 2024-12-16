@@ -41,7 +41,29 @@ function Scrollers() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [patient, setPatient] = useState(null)
+    const [patient, setPatient] = useState({
+        "resourceType": "Patient",
+        "id": "patient-0",
+        "name": [
+          {
+            "use": "official",
+            "family": "SmileTest",
+            "given": ["GregTest"]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1985-02-15",
+        "address": [
+          {
+            "use": "home",
+            "line": ["456 Oak Street"],
+            "city": "Los Angeles",
+            "state": "CA",
+            "postalCode": "90001",
+            "country": "USA"
+          }
+        ]
+      })
 
     function handleClickPatient(event, patientsItems) {
         const patientId = event.target.id
@@ -65,33 +87,43 @@ function Scrollers() {
 
     return ( 
         <div>
-            <div style={{display:"flex"}}>
-                <div onClick={(event) => handleClickHospital(event, hospitals)}>
+            <div className="scrollers">
+                <div className="scrollers-title" onClick={(event) => handleClickHospital(event, hospitals)}>
+                    <h3>Hospitals</h3>
                     <PrimaryScroller hospitals={hospitals}></PrimaryScroller>
                 </div>
-                <div onClick={(event) => handleClickPatient(event, patients)}>
+                <div className="scrollers-title" onClick={(event) => handleClickPatient(event, patients)}>
+                    <h3>Patients</h3>
                     <SecondaryScroller data={patients}></SecondaryScroller>
                 </div>
             </div>
             <div>
                 <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Header>
+                    <Modal.Title>{patient.name[0].given[0] + ` ` + patient.name[0].family}</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>{JSON.stringify(patient)}</Modal.Body>
+                    <Modal.Body>
+                        <div>
+                            <p>
+                                Date of Birth: {patient.birthDate}
+                            </p>
+                            <p>
+                                City: {patient.address[0].city + ` ` + 
+                                    patient.address[0].state}
+                            </p>
+                        </div>
+                    </Modal.Body>
                     <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                    </Button>
                     </Modal.Footer>
                 </Modal>
             </div>
-            {/* <p>{JSON.stringify(hospitals)}</p>
+            {/* <p>{JSON.stringify(hospitals)}</p> */}
             <br></br>
-            <p>{JSON.stringify(patients)}</p> */}
+            {/* <p>{JSON.stringify(patients)}</p> */}
+            <p>{JSON.stringify(patient)}</p>
         </div>
      );
 }

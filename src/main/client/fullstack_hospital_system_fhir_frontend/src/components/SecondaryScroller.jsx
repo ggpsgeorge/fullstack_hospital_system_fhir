@@ -16,14 +16,14 @@ function SecondaryScroller({resourceType, data}) {
     
     if(!jsonItems.length) {
         return(
-            <div className="scroller">
+            <div className="scroller-patient">
                 <Profile name="Loading ..."></Profile>
             </div>
         );
     }
 
     return(
-        <div className="scroller">
+        <div className="scroller-patient">
             {jsonItems.map((item, index) => {
                 return(
                     <div key={index}>

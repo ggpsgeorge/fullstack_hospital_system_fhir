@@ -1,18 +1,23 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f2e9e4;
+}
+
 .home {
-  width: 85vw;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 10px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .title {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin: 50px 0px 150px 0px;
   width: 100vw;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .home .title {
@@ -20,12 +25,13 @@
 }
 
 .scroller-hospital {
-  padding-top: 30px;
-  border: 10px solid red;
-  height: 300px;
+  /* border: 10px solid red; */
+  height: 175px;
   width: 700px;
+  margin-right: 50px;
   overflow: scroll;
-  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.438);
+  border-radius: 10px;
 }
 
 .scroller-hospital .profile {
@@ -34,15 +40,48 @@
   padding-left: 20px;
 }
 
-.scroller-patient-doctor {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 10px solid red;
-  height: 300px;
+.scroller-hospital::-webkit-scrollbar {
+  width: 30px;
+}
+ 
+.scroller-hospital::-webkit-scrollbar-track {
+  background: black;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.scroller-hospital::-webkit-scrollbar-thumb {
+  background: red;
+  border: 3px solid blue;
+}
+
+.scroller-patient {
+  /* border: 10px solid red; */
+  height: 175px;
   width: 500px;
   overflow: scroll;
+  background-color: rgba(255, 255, 255, 0.438);
+  border-radius: 10px;
+}
+
+.scroller-patient .profile {
+  width: auto;
+  text-align: left;
+  padding-left: 20px;
+  border-left: 5px solid #669bbc;
+}
+
+.scroller-patient::-webkit-scrollbar {
+  width: 30px;
+}
+ 
+.scroller-patient::-webkit-scrollbar-track {
+  background: black;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.scroller-patient::-webkit-scrollbar-thumb {
+  background: red;
+  border: 3px solid blue;
 }
 
 .patient-doctor-select {
@@ -51,22 +90,31 @@
 }
 
 .scroller {
-  border: 10px solid red;
+  /* border: 10px solid red; */
   height: 300px;
   width: 400px;
   overflow: scroll;
+}
+
+.scrollers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.scrollers-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile {
   margin: 5px;
   width: 400px;
   font-size: 1rem;
-  border: 2px solid black;
-}
-
-.scroller .profile {
-  width: auto;
-  text-align: left;
-  padding-left: 20px;
+  cursor: pointer;
+  /* border: 2px solid black; */
+  border-left: 5px solid #003049;
 }
 
