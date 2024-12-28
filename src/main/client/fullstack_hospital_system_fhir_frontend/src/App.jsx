@@ -1,7 +1,7 @@
 import './App.css'
 
 import { useState, useEffect } from 'react';
-import Scrollers from './components/Scrollers';
+import Scrollers from './components/Scrollersv2/Scrollers';
 
 function App() {
   
